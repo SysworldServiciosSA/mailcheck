@@ -15,23 +15,56 @@ var Mailcheck = {
   secondLevelThreshold: 2,
   topLevelThreshold: 2,
 
-  defaultDomains: ['msn.com', 'bellsouth.net',
-    'telus.net', 'comcast.net', 'optusnet.com.au',
-    'earthlink.net', 'qq.com', 'sky.com', 'icloud.com',
-    'mac.com', 'sympatico.ca', 'googlemail.com',
-    'att.net', 'xtra.co.nz', 'web.de',
-    'cox.net', 'gmail.com', 'ymail.com',
-    'aim.com', 'rogers.com', 'verizon.net',
-    'rocketmail.com', 'google.com', 'optonline.net',
-    'sbcglobal.net', 'aol.com', 'me.com', 'btinternet.com',
-    'charter.net', 'shaw.ca'],
+  defaultDomains: [
+    'aol.com',
+    'argentina.com',
+    'arnet.com.ar',
+    'bol.com.br',
+    'cablevision.com.ar',
+    'ciudad.com.ar',
+    'claro.com.ar',
+    'facebook.com',
+    'fibertel.com.ar',
+    'globo.com',
+    'globomail.com',
+    'gmail.com',
+    'google.com',
+    'googlemail.com',
+    'hotmail.cl',
+    'hotmail.com',
+    'hotmail.com.ar',
+    'hotmail.com.br',
+    'hotmail.es',
+    'ig.com.br',
+    'live.com',
+    'live.com.ar',
+    'live.com.mx',
+    'mac.com',
+    'me.com',
+    'msn.com',
+    'oi.com.br',
+    'outlook.com',
+    'outlook.com.ar',
+    'outlook.com.br',
+    'outlook.com.pe',
+    'outlook.cl',
+    'prodigy.net.mx',
+    'r7.com',
+    'speedy.com.ar',
+    'terra.com.br',
+    'uol.com.br',
+    'uolsinectis.com.ar',
+    'yahoo.com',
+    'yahoo.com.ar',
+    'yahoo.com.br',
+    'yahoo.com.mx',
+    'yahoo.es',
+    'zipmail.com.br'
+  ],
 
-  defaultSecondLevelDomains: ["yahoo", "hotmail", "mail", "live", "outlook", "gmx"],
+  defaultSecondLevelDomains: [],
 
-  defaultTopLevelDomains: ["com", "com.au", "com.tw", "ca", "co.nz", "co.uk", "de",
-    "fr", "it", "ru", "net", "org", "edu", "gov", "jp", "nl", "kr", "se", "eu",
-    "ie", "co.il", "us", "at", "be", "dk", "hk", "es", "gr", "ch", "no", "cz",
-    "in", "net", "net.au", "info", "biz", "mil", "co.jp", "sg", "hu", "uk"],
+  defaultTopLevelDomains: [],
 
   run: function(opts) {
     opts.domains = opts.domains || Mailcheck.defaultDomains;
@@ -204,10 +237,10 @@ var Mailcheck = {
                 c1=c2=Math.min(c1,c2);  //using min allows the computation of transpositions
             }
             //if matching characters are found, remove 1 from both cursors (they get incremented at the end of the loop)
-            //so that we can have only one code block handling matches 
+            //so that we can have only one code block handling matches
             for (var j = 0; j < maxOffset && (c1+j<l1 || c2+j<l2); j++) {
                 if ((c1 + j < l1) && (s1.charAt(c1 + j) == s2.charAt(c2))) {
-                    c1+= j-1; 
+                    c1+= j-1;
                     c2--;
                     break;
                 }
